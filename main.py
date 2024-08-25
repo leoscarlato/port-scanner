@@ -1,6 +1,7 @@
 import socket
 import tkinter as tk
 from tkinter import messagebox
+from ports import well_known_ports
 
 # Project: Port Scanner
 # Details in README.md
@@ -12,32 +13,20 @@ def scan_port(host, port):
         result = s.connect_ex((host, port))
         s.close()
         return result == 0
+    
     except Exception as e:
         return_message = f"Erro ao verificar a porta {port}: {str(e)}\n"
         text_result.insert(tk.END, return_message)
         window.update_idletasks()
         return False
-    
-well_known_ports = {
-    20: "FTP",
-    21: "FTP",
-    22: "SSH",
-    23: "Telnet",
-    25: "SMTP",
-    53: "DNS",
-    80: "HTTP",
-    110: "POP3",
-    143: "IMAP",
-    443: "HTTPS",
-    993: "IMAP",
-    995: "POP3 ",
-    3306: "MySQL",
-    8080: "HTTP",
-    8443: "HTTPS"
-}
 
 def scan_range():
     host = entry_host.get()
+    
+    if not host:
+        messagebox.showerror("Erro", "Insira um host válido.")
+        return
+
     try:
         start_port = int(entry_start_port.get())
         end_port = int(entry_end_port.get())
