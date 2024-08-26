@@ -42,5 +42,9 @@ Em seguida, se abrirá a interface gráfica da aplicação. Nela, basta inserir 
 
 Assim, a aplicação irá realizar a verificação das portas e exibirá o resultado na tela.
 
+## Referências
+https://www.geeksforgeeks.org/port-scanner-using-python/
 
- 
+https://medium.com/@wizD/a-simple-port-scanner-using-python-e541454ea570
+
+ https://www.infosecinstitute.com/resources/penetration-testing/write-a-port-scanner-in-python/
